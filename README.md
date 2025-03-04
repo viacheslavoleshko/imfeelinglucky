@@ -1,4 +1,4 @@
-# OLX price checker
+# imfeelinglucky
 
 ## Description 
 
