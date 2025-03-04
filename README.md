@@ -45,7 +45,9 @@ You can change `QUEUE_CONNECTION` in `.env` if you need
 
 ## Project support
 
-> You can interesting in: [MySQL database schema](https://drawsql.app/teams/test-4184/diagrams/imfeelinglucky)
+> Request docs & OpenAPI: `/request-docs`
+
+> Also you can interesting in: [MySQL database schema](https://drawsql.app/teams/test-4184/diagrams/imfeelinglucky)
 
 
 - Register: `api/v1/auth/register`
