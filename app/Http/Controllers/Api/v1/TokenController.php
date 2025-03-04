@@ -17,11 +17,27 @@ class TokenController extends Controller
         $this->tokenService = $tokenService;
     }
 
+    /**
+     * @lrd:start
+     * Regenerates a token.
+     *
+     * @param string $token
+     * @return \Illuminate\Http\Response
+     * @lrd:end
+     */
     public function regenerate(Request $request, $token): Response
     {
         return response(new TokenResource($this->tokenService->regenerate($token)), Response::HTTP_ACCEPTED);
     }
 
+    /**
+     * @lrd:start
+     * Revokes a token.
+     *
+     * @param string $token
+     * @return \Illuminate\Http\Response
+     * @lrd:end
+     */
     public function revoke(Request $request, $token): Response
     {
         $this->tokenService->delete($token);

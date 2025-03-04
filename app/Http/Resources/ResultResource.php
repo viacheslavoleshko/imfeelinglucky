@@ -15,7 +15,7 @@ class ResultResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'result' => $this->result,
+            'result' => $this->result ? 'win' : 'lose',
             'value' => $this->value,
             'amount' => $this->amount,
             'created_at' => $this->created_at,

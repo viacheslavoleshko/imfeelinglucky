@@ -25,7 +25,7 @@ class CheckExpiredTokens extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $expiredTokens = User::where('url_token_expires_at', '<', now())->get();
 

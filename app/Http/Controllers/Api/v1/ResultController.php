@@ -18,11 +18,27 @@ class ResultController extends Controller
         $this->ticketService = $ticketService;
     }
 
+    /**
+     * @lrd:start
+     * Get random value in and amount percentage of value if it even.
+     *
+     * @param string $token The token to get the value for.
+     * @return \Illuminate\Http\Response The HTTP response containing the result.
+     * @lrd:end
+     */
     public function index(Request $request, $token): Response
     {
         return response(new ResultResource($this->ticketService->imfeelinglucky($token)), Response::HTTP_ACCEPTED);
     }
 
+    /**
+     * @lrd:start
+     * Retrieve the history of results for a given token.
+     *
+     * @param string $token The token to retrieve the history for.
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection The collection of result resources.
+     * @lrd:end
+     */
     public function history(Request $request, $token): AnonymousResourceCollection
     {
         return ResultResource::collection($this->ticketService->history($token));
