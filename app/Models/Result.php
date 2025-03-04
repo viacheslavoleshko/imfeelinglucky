@@ -29,7 +29,7 @@ class Result extends Model
     
         return [
             'url_token' => $token,
-            'url_token_expires_at' => now()->addMinutes(10),
+            'url_token_expires_at' => now()->addMinutes(env('URL_TOKEN_EXPIRATION_TIME', 1440 * 7)),
         ];
     }
 }
